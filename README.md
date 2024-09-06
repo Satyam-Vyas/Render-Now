@@ -7,10 +7,10 @@ Prerendering involves using a headless browser on the server to load, execute Ja
 ![Dynamic Rendering Explainer](assets/Dynamic-Rendering-Explainer.png)
 
 We determine if the request is from a crawler by inspecting the User-Agent header. 
-If the request is from a crawler:
+- **If the request is from a crawler**:
 instruct Render-Now to prerender the current page and return the server-side rendered HTML.
 
-If the request is not from a crawler:
+- **If the request is not from a crawler**:
 we simply return index.html, allowing the JavaScript files to handle client-side rendering.
 
 ### Features
@@ -24,7 +24,7 @@ we simply return index.html, allowing the JavaScript files to handle client-side
 
 - **🌐 Broad Compatibility**: Designed to work with a variety of APIs and services, making it adaptable to diverse environments and requirements.
 
-# Routes
+# Route
 
 #### `/render`
 **Use Case:** Request an HTML rendered version of a webpage  
@@ -51,10 +51,13 @@ For new SPA projects where SEO is crucial, it's recommended to use Node.js and i
 # Installation
 
 set up environment variables - 
-| Name | Default Value |
- PORT | `3000` |
-| CACHE_MAX_SIZE | `100` |
-| CACHE_MAX_AGE | `1800` |
+
+| Name          | Default Value |
+|---------------|---------------|
+| PORT          | `3000`        |
+| CACHE_MAX_SIZE | `100 MB`        |
+| CACHE_MAX_AGE | `1800 sec`        |
+
 
 ```sh
 npm install
